@@ -1,0 +1,281 @@
+.common-block {
+  span {
+    color: $secondary-color;
+    font-size: 17px;
+  }
+  h2 {
+    color: $tittle-color;
+    font-weight: 500;
+    letter-spacing: -4px;
+    font-size: 45px;
+    line-height: 50px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+    @include mobile {
+      font-size: 53px;
+      line-height: 60px;
+      margin-bottom: 24px;
+      padding-right: 10px;
+      margin-top: 10px;
+    }
+    @include mobile-lg {
+      font-size: 60px;
+      line-height: 65px;
+      margin-bottom: 24px;
+      margin-top: 10px;
+    }
+    @include tablet {
+      padding-right: 78px;
+      margin-top: 10px;
+    }
+    @include desktops {
+      padding-right: 0px;
+      font-size: 55px;
+      line-height: 62px;
+      margin-top: 10px;
+    }
+  }
+  p {
+    color: $text-color;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+  }
+}
+
+.submit-btn {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -1.12px;
+  border-radius: 30px;
+  background-color: $primary-color;
+  width: 100%;
+  margin-top: 10px;
+  height: 50px;
+  transition: all 500ms ease-in-out;
+  @include mobile {
+    margin-top: 0px;
+    height: 60px;
+    width: 177px;
+    font-size: 18px;
+  }
+  &:hover {
+    background: darken($color: #4adecc, $amount: 15%);
+    color: #fff;
+    transition: all 500ms ease-in-out;
+  }
+  &.reverse {
+    background-color: $primary-color-02;
+    &:hover {
+      background: darken($color: $primary-color-02, $amount: 15%);
+      transition: all 500ms ease-in-out;
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  transition: all 500ms ease-in-out;
+  width: 100%;
+  .navbar-brand {
+    color: #2f4154;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .navbar {
+    padding: 40px 0;
+    width: 100%;
+    transition: all 500ms ease-in-out;
+    .nav-item {
+      color: #a5b7bb;
+      @include desktops {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      &.get-started {
+        color: #fff;
+        background: #4adecc;
+        border-radius: 30px;
+        margin-top: 10px;
+        width: 100px;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+        @include desktops {
+          margin-left: 1rem;
+          margin-top: 0px;
+          width: auto;
+        }
+        &:hover {
+          background: darken($color: #4adecc, $amount: 15%);
+          color: #fff;
+          transition: all 500ms ease-in-out;
+        }
+      }
+    }
+  }
+  &.scrolled {
+    background: #fff;
+    transition: all 500ms ease-in-out;
+    .navbar {
+      padding: 10px 0;
+      transition: all 500ms ease-in-out;
+    }
+  }
+  .navbar-collapse {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    @include desktops {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+}
+
+.banner {
+  background-image: url(../images/banner.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: right;
+  padding: 170px 0 50px;
+  @include desktops {
+    padding: 170px 0 110px;
+  }
+  &-content {
+    text-align: left;
+    p {
+      color: #abc4cc;
+    }
+  }
+  &-form {
+    @include desktops {
+      padding: 30px 0 0;
+    }
+    .form-group {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      @include mobile {
+        flex-direction: row;
+      }
+      input {
+        height: 70px;
+        color: #666666;
+        border-radius: 340px;
+        background: #fff;
+        padding-left: 20px;
+        border-color: transparent;
+        &::placeholder {
+          color: #878b90;
+          font-size: 18px;
+          font-weight: 400;
+          letter-spacing: -0.9px;
+        }
+      }
+      button {
+        margin-top: 10px;
+        height: 60px;
+        position: absolute;
+        right: 5px;
+        top: -5px;
+      }
+    }
+
+    .form-text {
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: -0.32px;
+      line-height: 36px;
+      color: #878b90;
+      a {
+        color: $primary-color;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.hero-area {
+  padding: 36px 0 50px;
+  @include desktops {
+    padding: 115px 0 110px;
+  }
+  &-content {
+    text-align: left;
+    @include desktops {
+      padding: 30px 0 0;
+    }
+    @include large-desktops {
+      padding: 30px 75px 0 0;
+    }
+    button {
+      margin-top: 2rem;
+    }
+  }
+  &-image {
+    margin-bottom: 30px;
+    margin-left: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      @include large-desktops {
+        max-width: 105%;
+      }
+    }
+  }
+}
+
+.client {
+  @include desktops {
+    display: flex;
+  }
+  .container {
+    margin-top: 20px;
+    padding: 20px;
+
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.core-business {
+  text-align: center;
+  p {
+    max-width: 100%;
+    margin: 0 auto;
+    @include desktops {
+      max-width: 60%;
+    }
+  }
+}
+
+.services {
+  text-align: -webkit-center;
+  white-space: pre-line;
+  img {
+    padding-bottom: 15px;
+  }
+  h3 {
+    color: #5f7994;
+    font-size: 20px;
+  }
+  p {
+    color: #b9c3cc;
+    line-height: 24px;
+    position: relative;
+    top: -20px;
+  }
+}
